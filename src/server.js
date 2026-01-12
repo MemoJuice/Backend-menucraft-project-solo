@@ -1,12 +1,14 @@
 import { app } from "./app.js";
+import { connectDB } from "./config/mongodb.js";
 
 const port = process.env.PORT || 1500;
 
 try {
+  await connectDB();
   app.listen(port, () => {
     console.log(`Sever running on port: ${port} ✅`);
   });
 } catch (error) {
-  console.error("Staryp failed ❌", error);
+  console.error("Startup failed ❌", error);
   process.exit(1);
 }

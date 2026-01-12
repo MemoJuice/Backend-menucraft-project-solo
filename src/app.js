@@ -6,10 +6,8 @@ dotenv.config();
 
 export const app = express();
 
-app.set();
-
 const corsOption = {
-  origin: ["http://localhost:5173/"],
+  origin: ["http://localhost:5173"],
 };
 
 app.use(cors(corsOption));
